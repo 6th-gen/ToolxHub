@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online tools: Age calculator, date converter, barcode generator, base64 encoder/decoder, calculator, binary/decimal converter, GitHub to JSDelivr converter and more.">
+    <title>ToolsHub - Free Online Tools for Developers</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>ToolsHub</h1>
+                <p>Free Online Tools</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#tools">All Tools</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h2>Free Online Tools for Developers & Everyone</h2>
+                <p>Access a collection of useful tools for calculations, conversions, encoding and more.</p>
+                <div class="search-box">
+                    <input type="text" id="tool-search" placeholder="Search for tools...">
+                    <button id="search-btn">Search</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="tools" class="tools-section">
+            <div class="container">
+                <h2>Our Tools</h2>
+                <div class="tools-grid">
+                    <div class="tool-card" data-tool="age-calculator">
+                        <div class="tool-icon">📅</div>
+                        <h3>Age Calculator</h3>
+                        <p>Calculate age from birth date</p>
+                    </div>
+                    <div class="tool-card" data-tool="date-converter">
+                        <div class="tool-icon">📆</div>
+                        <h3>Date Converter</h3>
+                        <p>Convert between date formats</p>
+                    </div>
+                    <div class="tool-card" data-tool="barcode-generator">
+                        <div class="tool-icon">📊</div>
+                        <h3>Barcode Generator</h3>
+                        <p>Generate barcodes from text</p>
+                    </div>
+                    <div class="tool-card" data-tool="base64-converter">
+                        <div class="tool-icon">🔒</div>
+                        <h3>Base64 Converter</h3>
+                        <p>Encode and decode Base64</p>
+                    </div>
+                    <div class="tool-card" data-tool="calculator">
+                        <div class="tool-icon">🧮</div>
+                        <h3>Calculator</h3>
+                        <p>Basic arithmetic operations</p>
+                    </div>
+                    <div class="tool-card" data-tool="binary-decimal">
+                        <div class="tool-icon">🔢</div>
+                        <h3>Binary/Decimal Converter</h3>
+                        <p>Convert between binary and decimal</p>
+                    </div>
+                    <div class="tool-card" data-tool="github-jsdelivr">
+                        <div class="tool-icon">⚡</div>
+                        <h3>GitHub to JSDelivr</h3>
+                        <p>Convert GitHub URLs to JSDelivr</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tool-display" class="tool-display-section">
+            <div class="container">
+                <div id="tool-container">
+                    <div class="welcome-message">
+                        <h3>Welcome to ToolsHub</h3>
+                        <p>Select a tool from above to get started. All tools are free to use with no registration required.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>About ToolsHub</h2>
+                <p>ToolsHub is a collection of free online tools designed to help developers, students, and professionals with their daily tasks. Our tools are easy to use, fast, and require no installation.</p>
+                <p>All tools are built with modern web technologies and work directly in your browser. No data is stored on our servers, ensuring your privacy and security.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 ToolsHub. All rights reserved.</p>
+            <p>Free online tools for everyone.</p>
+        </div>
+    </footer>
+
+    <!-- Tool Templates (hidden by default) -->
+    <template id="age-calculator-template">
+        <div class="tool-wrapper">
+            <h3>Age Calculator</h3>
+            <p>Calculate your exact age in years, months, and days.</p>
+            <div class="tool-form">
+                <div class="form-group">
+                    <label for="birth-date">Enter your birth date:</label>
+                    <input type="date" id="birth-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="age-date">Calculate age as of (optional):</label>
+                    <input type="date" id="age-date">
+                </div>
+                <button id="calculate-age" class="btn-primary">Calculate Age</button>
+            </div>
+            <div id="age-result" class="result-container"></div>
+        </div>
+    </template>
+
+    <template id="date-converter-template">
+        <div class="tool-wrapper">
+            <h3>Date Converter</h3>
+            <p>Convert dates between different formats.</p>
+            <div class="tool-form">
+                <div class="form-group">
+                    <label for="input-date">Enter date:</label>
+                    <input type="text" id="input-date" placeholder="YYYY-MM-DD or MM/DD/YYYY">
+                </div>
+                <div class="form-group">
+                    <label for="date-format">Select output format:</label>
+                    <select id="date-format">
+                        <option value="YYYY-MM-DD">YYYY-MM-DD</option>
+                        <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                        <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                        <option value="MMMM D, YYYY">MMMM D, YYYY</option>
+                    </select>
+                </div>
+                <button id="convert-date" class="btn-primary">Convert Date</button>
+            </div>
+            <div id="date-result" class="result-container"></div>
+        </div>
+    </template>
+
+    <template id="barcode-generator-template">
+        <div class="tool-wrapper">
+            <h3>Barcode Generator</h3>
+            <p>Generate barcodes from text input.</p>
+            <div class="tool-form">
+                <div class="form-group">
+                    <label for="barcode-text">Enter text to encode:</label>
+                    <input type="text" id="barcode-text" placeholder="Enter text for barcode">
+                </div>
+                <button id="generate-barcode" class="btn-primary">Generate Barcode</button>
+            </div>
+            <div id="barcode-result" class="result-container">
+                <canvas id="barcode-canvas"></canvas>
+            </div>
+        </div>
+    </template>
+
+    <template id="base64-converter-template">
+        <div class="tool-wrapper">
+            <h3>Base64 Encoder/Decoder</h3>
+            <p>Encode text to Base64 or decode Base64 to text.</p>
+            <div class="tool-form">
+                <div class="form-group">
+                    <label for="base64-input">Enter text or Base64 string:</label>
+                    <textarea id="base64-input" rows="4" placeholder="Enter text to encode or Base64 to decode"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Operation:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="encode" name="base64-operation" value="encode" checked>
+                        <label for="encode">Encode to Base64</label>
+                        <input type="radio" id="decode" name="base64-operation" value="decode">
+                        <label for="decode">Decode from Base64</label>
+                    </div>
+                </div>
+                <button id="process-base64" class="btn-primary">Process</button>
+            </div>
+            <div id="base64-result" class="result-container"></div>
+        </div>
+    </template>
+
+    <template id="calculator-template">
+        <div class="tool-wrapper">
+            <h3>Basic Calculator</h3>
+            <p>Perform basic arithmetic operations.</p>
+            <div class="calculator">
+                <div class="calculator-display">
+                    <input type="text" id="calc-display" readonly>
+                </div>
+                <div class="calculator-buttons">
+                    <button class="calc-btn" data-value="C">C</button>
+                    <button class="calc-btn" data-value="CE">CE</button>
+                    <button class="calc-btn" data-value="%">%</button>
+                    <button class="calc-btn operator" data-value="/">/</button>
+                    
+                    <button class="calc-btn" data-value="7">7</button>
+                    <button class="calc-btn" data-value="8">8</button>
+                    <button class="calc-btn" data-value="9">9</button>
+                    <button class="calc-btn operator" data-value="*">×</button>
+                    
+                    <button class="calc-btn" data-value="4">4</button>
+                    <button class="calc-btn" data-value="5">5</button>
+                    <button class="calc-btn" data-value="6">6</button>
+                    <button class="calc-btn operator" data-value="-">-</button>
+                    
+                    <button class="calc-btn" data-value="1">1</button>
+                    <button class="calc-btn" data-value="2">2</button>
+                    <button class="calc-btn" data-value="3">3</button>
+                    <button class="calc-btn operator" data-value="+">+</button>
+                    
+                    <button class="calc-btn zero" data-value="0">0</button>
+                    <button class="calc-btn" data-value=".">.</button>
+                    <button class="calc-btn equals" data-value="=">=</button>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="binary-decimal-template">
+        <div class="tool-wrapper">
+            <h3>Binary/Decimal Converter</h3>
+            <p>Convert between binary and decimal number systems.</p>
+            <div class="tool-form">
+                <div class="form-group">
+                    <label for="number-input">Enter number:</label>
+                    <input type="text" id="number-input" placeholder="Enter binary or decimal number">
+                </div>
+                <div class="form-group">
+                    <label>Conversion:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="binary-to-decimal" name="conversion-type" value="binary-to-decimal" checked>
+                        <label for="binary-to-decimal">Binary to Decimal</label>
+                        <input type="radio" id="decimal-to-binary" name="conversion-type" value="decimal-to-binary">
+                        <label for="decimal-to-binary">Decimal to Binary</label>
+                    </div>
+                </div>
+                <button id="convert-number" class="btn-primary">Convert</button>
+            </div>
+            <div id="number-result" class="result-container"></div>
+        </div>
+    </template>
+
+    <template id="github-jsdelivr-template">
+        <div class="tool-wrapper">
+            <h3>GitHub to JSDelivr Converter</h3>
+            <p>Convert GitHub file URLs to JSDelivr CDN URLs.</p>
+            <div class="tool-form">
+                <div class="form-group">
+                    <label for="github-url">GitHub URL:</label>
+                    <input type="text" id="github-url" placeholder="https://github.com/user/repo/blob/branch/file">
+                </div>
+                <button id="convert-url" class="btn-primary">Convert to JSDelivr</button>
+            </div>
+            <div id="url-result" class="result-container"></div>
+        </div>
+    </template>
+
+    <script src="js/main.js"></script>
+    <script src="js/tools/age-calculator.js"></script>
+    <script src="js/tools/date-converter.js"></script>
+    <script src="js/tools/barcode-generator.js"></script>
+    <script src="js/tools/base64-converter.js"></script>
+    <script src="js/tools/calculator.js"></script>
+    <script src="js/tools/binary-decimal.js"></script>
+    <script src="js/tools/github-jsdelivr.js"></script>
+</body>
+</html>
